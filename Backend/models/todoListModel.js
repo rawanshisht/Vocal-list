@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import { todoListItemSchema } from "./todoListItemModel.js";
 const todoListSchema = mongoose.Schema(
   {
     title: {
@@ -10,6 +10,13 @@ const todoListSchema = mongoose.Schema(
       type: String,
       required: false,
     },
+    items: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Todo List Item",
+        required: false,
+      },
+    ],
   },
   {
     timestamps: true,
