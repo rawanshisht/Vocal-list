@@ -1,11 +1,8 @@
-import Navbar from "./components/Navbar";
 import logo from "../../public/logo.svg";
-import Footer from "./components/Footer";
 
 const LandingPage = () => {
   return (
     <div>
-      <Navbar />
       <div className="bg-teal-950 grid grid-cols-1 md:grid-cols-2 p-4 lg:p-12 justify-items-center ">
         <div className="order-2 md:order-1">
           <p className="text-130 text-gray-100 font-bold m-0 text-left ">
@@ -39,7 +36,6 @@ const LandingPage = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

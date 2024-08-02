@@ -14,6 +14,7 @@ export default {
       fontSize: {
         130: "130px",
         40: "40px",
+        100: "100px",
       },
     },
   },
