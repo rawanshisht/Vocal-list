@@ -5,10 +5,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#ffffff", // Define a custom color named 'background'
+        "custom-orange": "#F7A072",
+        "custom-orange-dark": "#E68A5A",
       },
       fontFamily: {
         "saira-condensed": ['"Saira Condensed"', "sans-serif"],
+      },
+      fontSize: {
+        130: "130px",
+        40: "40px",
       },
     },
   },
