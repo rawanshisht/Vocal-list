@@ -1,3 +1,3 @@
 export const ListItem = () => {
-  return <div>ListItem</div>;
+  return <div>List Item</div>;
 };
