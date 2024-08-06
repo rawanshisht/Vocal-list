@@ -19,7 +19,7 @@ export const ListItem = () => {
             alt="List icon"
             className="w-8 h-8 md:w-16 md:h-16"
           />
-          <p className="text-custom-orange text-center text-2xl md:text-100 font-semibold">
+          <p className="text-custom-orange text-center text-2xl md:text-100 font-semibold ">
             All Lists
           </p>
         </div>
