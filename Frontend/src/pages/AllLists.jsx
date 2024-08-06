@@ -34,7 +34,7 @@ const AllLists = () => {
           <img
             src={ListIcon}
             alt="List icon"
-            className="w-12 h-12 md:w-20 md:h-20"
+            className="w-12 h-12 md:w-16 md:h-16"
           />
           <p className="text-custom-orange text-center text-40 md:text-100 font-semibold">
             All Lists
@@ -43,12 +43,12 @@ const AllLists = () => {
         <img
           src={AddIcon}
           alt="Add icon"
-          className="w-12 h-12 md:w-20 md:h-20"
+          className="w-12 h-12 md:w-16 md:h-16 mt-2"
         />
       </div>
-      <div className="grid grid-row-1 lg:grid-cols-3">
+      <div className="grid grid-cols-1 lg:grid-cols-3">
         {myLists.map((list) => (
-          <ListCard key={list.id} list={list} />
+          <ListCard key={list.id} listId={list.id} />
         ))}
       </div>
     </div>
