@@ -11,20 +11,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // Error handling middleware to ignore favicon requests
-app.use((req, res, next) => {
-  if (req.originalUrl === "/favicon.ico") {
-    res.status(204).end(); // No Content
-  } else {
-    next();
-  }
-});
+
 app.get("/", (req, res) => {
   console.log(req);
   return res.status(200).send("Welcome");
 });
-app.use("/todolists", protect, todoListRoute);
-app.use("/todos", protect, todoListItemRoute);
-app.use("/users", authRoute);
+app.use("/api/todolists", protect, todoListRoute);
+app.use("/api/todos", protect, todoListItemRoute);
+app.use("/api/users", authRoute);
 const port = process.env.PORT || 5555;
 mongoose
   .connect(process.env.mongoDBURL)
