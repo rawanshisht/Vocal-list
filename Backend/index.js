@@ -18,12 +18,13 @@ app.get("/", (req, res) => {
 app.use("/todolists", protect, todoListRoute);
 app.use("/todos", protect, todoListItemRoute);
 app.use("/users", authRoute);
+const port = process.env.PORT || 5555;
 mongoose
   .connect(process.env.mongoDBURL)
   .then(() => {
     console.log("App connected to DB");
     app.listen(process.env.PORT, () => {
-      console.log(`App is listening on port: ${process.env.PORT}`);
+      console.log(`App is listening on port: ${port}`);
     });
   })
   .catch((err) => {
