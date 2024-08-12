@@ -10,7 +10,6 @@ dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-// Error handling middleware to ignore favicon requests
 
 app.get("/", (req, res) => {
   console.log(req);
@@ -24,9 +23,9 @@ mongoose
   .connect(process.env.mongoDBURL)
   .then(() => {
     console.log("App connected to DB");
-    app.listen(port, () => {
-      console.log(`App is listening on port: ${port}`);
-    });
+    // app.listen(port, () => {
+    //   console.log(`App is listening on port: ${port}`);
+    // });
   })
   .catch((err) => {
     console.log(err);
