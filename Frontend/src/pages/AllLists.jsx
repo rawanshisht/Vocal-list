@@ -3,7 +3,7 @@ import { useState } from "react";
 import ListIcon from "../assets/List.svg";
 import AddIcon from "../assets/Add.svg";
 import { ListCard } from "./ListCard";
-
+import { useNavigate } from "react-router-dom";
 const AllLists = () => {
   const [myLists, setMyLists] = useState([
     {
@@ -27,6 +27,10 @@ const AllLists = () => {
       items: ["milk", "coffee"],
     },
   ]);
+  const navigate = useNavigate();
+  const handleAddList = () => {
+    navigate("/add-list");
+  };
   return (
     <div className="bg-gray-100 p-4 lg:p-12">
       <div className="flex flex-row items-center space-x-4 justify-between">
@@ -40,11 +44,13 @@ const AllLists = () => {
             All Lists
           </p>
         </div>
-        <img
-          src={AddIcon}
-          alt="Add icon"
-          className="w-12 h-12 md:w-16 md:h-16 mt-2"
-        />
+        <button onClick={handleAddList}>
+          <img
+            src={AddIcon}
+            alt="Add icon"
+            className="w-12 h-12 md:w-16 md:h-16 mt-2 hover:scale-105"
+          />
+        </button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3">
         {myLists.map((list) => (

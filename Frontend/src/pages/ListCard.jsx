@@ -21,6 +21,9 @@ export const ListCard = ({ listId }) => {
   const handleNavigateListItem = (path) => {
     navigate(path);
   };
+  const handleEditList = () => {
+    navigate("/edit-list");
+  };
   return (
     <div key={list.id} className="card w-64 md:w-80 shadow-2xl p-0 mx-auto m-2">
       <div className="card-body text-left">
@@ -42,7 +45,7 @@ export const ListCard = ({ listId }) => {
         <div className="flex flex-row card-actions justify-end space-x-4 mt-5">
           <button
             onClick={() => setShowModal(true)}
-            className="focus:outline-none"
+            className="focus:outline-none hover:scale-150"
           >
             <img
               src={EyeIcon}
@@ -50,21 +53,29 @@ export const ListCard = ({ listId }) => {
               className="w-4 h-4 lg:w-8 lg:h-8"
             />
           </button>
-          <button onClick={() => handleNavigateListItem(`/my-list/${listId}`)}>
+          <button
+            onClick={() => handleNavigateListItem(`/my-list/${listId}`)}
+            className="focus:outline-none hover:scale-150"
+          >
             <img
               src={InfoIcon}
               alt="Info icon"
               className="w-4 h-4 lg:w-8 lg:h-8"
             />
           </button>
-          <img
-            src={EditIcon}
-            alt="Edit icon"
-            className="w-4 h-4 lg:w-8 lg:h-8"
-          />
+          <button
+            className="focus:outline-none hover:scale-150"
+            onClick={handleEditList}
+          >
+            <img
+              src={EditIcon}
+              alt="Edit icon"
+              className="w-4 h-4 lg:w-8 lg:h-8"
+            />
+          </button>
           <button
             onClick={() => setShowDeleteModal(true)}
-            className="focus:outline-none"
+            className="focus:outline-none hover:scale-150"
           >
             <img
               src={TrashIcon}
