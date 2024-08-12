@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   console.log(req);
-  return res.status(234).send("Welcome");
+  return res.status(200).send("Welcome");
 });
 app.use("/todolists", protect, todoListRoute);
 app.use("/todos", protect, todoListItemRoute);
@@ -23,7 +23,7 @@ mongoose
   .connect(process.env.mongoDBURL)
   .then(() => {
     console.log("App connected to DB");
-    app.listen(process.env.PORT, () => {
+    app.listen(port, () => {
       console.log(`App is listening on port: ${port}`);
     });
   })
