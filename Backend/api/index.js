@@ -1,17 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
-import todoListRoute from "./routes/todoListRoute.js";
-import todoListItemRoute from "./routes/todoListItemRoute.js";
-import authRoute from "./routes/authRoute.js";
+import todoListRoute from "../routes/todoListRoute.js";
+import todoListItemRoute from "../routes/todoListItemRoute.js";
+import authRoute from "../routes/authRoute.js";
 import cors from "cors";
 import dotenv from "dotenv";
-import { protect } from "./middlewares/authMiddleware.js";
-import favicon from "serve-favicon";
+import { protect } from "../middlewares/authMiddleware.js";
 dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 // Error handling middleware to ignore favicon requests
 app.use((req, res, next) => {
   if (req.originalUrl === "/favicon.ico") {
