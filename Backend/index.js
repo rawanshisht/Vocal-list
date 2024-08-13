@@ -1,11 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import todoListRoute from "../routes/todoListRoute.js";
-import todoListItemRoute from "../routes/todoListItemRoute.js";
-import authRoute from "../routes/authRoute.js";
+import todoListRoute from "./routes/todoListRoute.js";
+import todoListItemRoute from "./routes/todoListItemRoute.js";
+import authRoute from "./routes/authRoute.js";
 import cors from "cors";
-import { protect } from "../middlewares/authMiddleware.js";
+import { protect } from "./middlewares/authMiddleware.js";
 import path from "path";
 import favicon from "serve-favicon";
 dotenv.config();

@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "api/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "cd Backend && node api/index.js",
-    "dev": "nodemon api/index.js",
+    "start": "cd Backend && node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"npm install"
+    "build":"npm install && npm build"
   },
   "keywords": [],
   "author": "",
