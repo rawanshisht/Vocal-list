@@ -8,7 +8,7 @@
     "start": "node api/index.js",
     "dev": "nodemon api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"cd Backend && node api/index.js"
+    "build":"npm install"
   },
   "keywords": [],
   "author": "",

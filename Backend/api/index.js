@@ -29,8 +29,6 @@ app.use("/api/users", authRoute);
 
 mongoose
   .connect(process.env.mongoDBURL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
     serverSelectionTimeoutMS: 100000,
   })
   .then(() => console.log("App connected to DB"))
