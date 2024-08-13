@@ -9,7 +9,7 @@ import { protect } from "./middlewares/authMiddleware.js";
 import path from "path";
 import favicon from "serve-favicon";
 dotenv.config();
-
+const port = process.env.PORT || 3000;
 const app = express();
 app.use(
   cors({
@@ -31,7 +31,12 @@ mongoose
   .connect(process.env.mongoDBURL, {
     serverSelectionTimeoutMS: 100000,
   })
-  .then(() => console.log("App connected to DB"))
+  .then(() => {
+    console.log("App connected to DB");
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`);
+    });
+  })
   .catch((err) => console.error("DB connection error:", err));
 
 export default app;
