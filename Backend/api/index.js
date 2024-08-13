@@ -11,7 +11,11 @@ import favicon from "serve-favicon";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 app.use(express.json());
 
 app.use(favicon(path.join(path.resolve(), "public", "favicon.ico")));
@@ -27,7 +31,7 @@ mongoose
   .connect(process.env.mongoDBURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    serverSelectionTimeoutMS: 10000,
+    serverSelectionTimeoutMS: 100000,
   })
   .then(() => console.log("App connected to DB"))
   .catch((err) => console.error("DB connection error:", err));

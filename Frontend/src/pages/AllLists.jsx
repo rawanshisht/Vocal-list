@@ -1,36 +1,37 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListIcon from "../assets/List.svg";
 import AddIcon from "../assets/Add.svg";
 import { ListCard } from "./ListCard";
 import { useNavigate } from "react-router-dom";
+// import { Loading } from "../components/Loading";
+import axios from "axios";
+
 const AllLists = () => {
-  const [myLists, setMyLists] = useState([
-    {
-      id: 1,
-      name: "list1",
-      items: ["milk", "coffee"],
-    },
-    {
-      id: 2,
-      name: "list2",
-      items: ["milk", "coffee"],
-    },
-    {
-      id: 3,
-      name: "list3",
-      items: ["milk", "coffee"],
-    },
-    {
-      id: 4,
-      name: "list4",
-      items: ["milk", "coffee"],
-    },
-  ]);
+  const [myLists, setMyLists] = useState([]);
   const navigate = useNavigate();
   const handleAddList = () => {
     navigate("/add-list");
   };
+  // useEffect(() => {
+  //   const fetchLists = async () => {
+  //     try {
+  //       const response = axios.get(
+  //         `${import.meta.env.VITE_API_BASE_URL}/todolists`
+  //       );
+  //       console.log(response);
+  //       setMyLists(response.data); // Assuming response.data is an array of lists
+  //     } catch (err) {
+  //       //setError("Failed to fetch lists. Please try again later.");
+  //     } finally {
+  //       //setLoading(false);
+  //     }
+  //   };
+
+  //   fetchLists();
+  // }, []);
+
   return (
     <div className="bg-gray-100 p-4 lg:p-12">
       <div className="flex flex-row items-center space-x-4 justify-between">
@@ -53,9 +54,9 @@ const AllLists = () => {
         </button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3">
-        {myLists.map((list) => (
+        {/* {myLists.map((list) => (
           <ListCard key={list.id} listId={list.id} />
-        ))}
+        ))} */}
       </div>
     </div>
   );
