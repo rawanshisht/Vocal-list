@@ -7,6 +7,7 @@ import { ListCard } from "./ListCard";
 import { useNavigate } from "react-router-dom";
 // import { Loading } from "../components/Loading";
 import axios from "axios";
+import Loading from "../components/Loading";
 
 const AllLists = () => {
   const [myLists, setMyLists] = useState([]);
@@ -33,7 +34,7 @@ const AllLists = () => {
   // }, []);
 
   return (
-    <div className="bg-gray-100 p-4 lg:p-12">
+    <div className="bg-gray-100 p-4 lg:p-12 h-screen">
       <div className="flex flex-row items-center space-x-4 justify-between">
         <div className="flex flex-row items-center space-x-4">
           <img
@@ -54,9 +55,14 @@ const AllLists = () => {
         </button>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3">
-        {/* {myLists.map((list) => (
-          <ListCard key={list.id} listId={list.id} />
-        ))} */}
+        {myLists.length > 0 ? (
+          myLists.map((list) => <ListCard key={list.id} listId={list.id} />)
+        ) : (
+          <div className="flex justify-items-center justify-center">
+            <Loading />
+          </div>
+        )}
+        {/* {} */}
       </div>
     </div>
   );

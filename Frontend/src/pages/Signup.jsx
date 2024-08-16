@@ -10,6 +10,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const handleClickSignup = async () => {
     try {
+      console.log(`${import.meta.env.VITE_API_BASE_URL}/users/signup`);
       const response = await axios.post(
         `${import.meta.env.VITE_API_BASE_URL}/users/signup`,
         {

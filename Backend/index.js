@@ -23,8 +23,8 @@ app.get("/", (req, res) => {
   res.send("Welcome");
 });
 
-app.use("/api/todolists", protect, todoListRoute);
-app.use("/api/todos", protect, todoListItemRoute);
+app.use("/api/todolists", todoListRoute);
+app.use("/api/todos", todoListItemRoute);
 app.use("/api/users", authRoute);
 
 mongoose
